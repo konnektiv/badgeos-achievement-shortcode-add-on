@@ -39,19 +39,34 @@ class BadgeOS_Achievement_Shortcode {
 		// Load translations
 		load_plugin_textdomain( 'badgeos-achievement-shortcode', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
-
 		// If BadgeOS is unavailable, deactivate our plugin
 		add_action( 'admin_notices', array( $this, 'maybe_disable_plugin' ) );
 
-		add_shortcode( 'user_earned_achievement', array( $this, 'shortcode' ) );
+		add_action( 'init', array( $this, 'register_badgeos_shortcodes' ) );
+	}
+
+	public function register_badgeos_shortcodes() {
+		badgeos_register_shortcode( array(
+			'name' 			=> __('User earned achievement', 'badgeos-achievement-shortcode'),
+			'slug' 			=> 'user_earned_achievement',
+			'description'	=> 'Show or hide content depending on if the user has earned a specific achievement',
+			'output_callback' => array( $this, 'shortcode' ),
+			'attributes'      => array(
+			'id' => array(
+				'name'        => __( 'Achievement ID', 'badgeos' ),
+				'description' => __( 'The ID of the achievement to the user must have earned.', 'badgeos' ),
+				'type'        => 'text',
+				),
+			),
+		) );
 	}
 
 	public function shortcode($atts, $content = null) {
 		 $atts = shortcode_atts( array(
-            'achievement'	=> false,    // achievement
+            'id'	=> false,    // achievement
         ), $atts );
 
-		$achievement = $atts['achievement'];
+		$achievement = $atts['id'];
 
 		$user_id = get_current_user_id();
 
@@ -60,9 +75,9 @@ class BadgeOS_Achievement_Shortcode {
 
 		$return = '';
 
-		if (!$achievement) {
-			$return = '<div class="error">' . __('You have to specify a valid achievement id in the "achievement" parameter!','badgeos-achievement-shortcode') . '</div>';
-		} elseif ($user_has_achievement) {
+		if ( !$achievement ) {
+			$return = '<div class="error">' . __('You have to specify a valid achievement id in the "achievement" parameter!', 'badgeos-achievement-shortcode') . '</div>';
+		} elseif ( $user_has_achievement ) {
 			$return = do_shortcode($content);
 		}
 
