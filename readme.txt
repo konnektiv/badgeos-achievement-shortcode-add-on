@@ -1,7 +1,7 @@
 === BadgeOS Achievement Shortcode Add On ===
 
 Contributors: konnektiv, chherbst
-Tags: badge, badges, openbadges, shortcode, credly, OBI, mozilla, open badges, achievement, award, reward, engagement, submission, nomination, community, API, open credit, credit, plugin
+Tags: badge, badges, restrict, shortcode, access, hide, content, openbadges, shortcode, credly, OBI, mozilla, open badges, achievement, award, reward, engagement, submission, nomination, community, API, open credit, credit, plugin
 Requires at least: WordPress 3.6.0, BadgeOS 1.4.0
 Tested up to: 4.5.2
 Stable tag: 1.0.0
@@ -14,7 +14,7 @@ This BadgeOS Add on adds a shortcode to show or hide content depending on if the
 
 This BadgeOS Add on adds a shortcode to show or hide content depending on if the user has earned a specific achievement.
 
-**Note:** You will need to install the free [BadgeOS plugin](http://wordpress.org/extend/plugins/badgeos/ "BadgeOS")&trade; (version 1.2 or higher) to use the BadgeOS Community Add-on.
+**Note:** You will need to install the free [BadgeOS plugin](http://wordpress.org/extend/plugins/badgeos/ "BadgeOS")&trade; (version 1.4 or higher) to use the BadgeOS Community Add-on.
 
 [Get the BadgeOS plugin](http://wordpress.org/extend/plugins/badgeos/ "BadgeOS").
 
@@ -23,7 +23,7 @@ This plugin was originally developed for the [globe - Community of Digital Learn
 = Contact =
 
 * [Konnektiv](http://konnektiv.de/)
-* [BadgeOS Achievement Shortcode Add-on on GitHub](https://github.com/konnektiv/BadgeOS-Achievement-Shortcode-Add-on) - Report issues, contribute code
+* [BadgeOS Achievement Shortcode Add-on on GitHub](https://github.com/konnektiv/badgeos-achievement-shortcode-add-on) - Report issues, contribute code
 
 
 == Installation ==
