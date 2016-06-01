@@ -7,11 +7,11 @@ Stable tag: 0.0.1
 License: GNU AGPLv3
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
 
-Adds a shortcode to show or hide content depeneding on if the user has earned a specific achievement.
+Adds a shortcode to show or hide content depending on if the user has earned a specific achievement.
 
 == Description ==
 
-Adds a shortcode to show or hide content depeneding on if the user has earned a specific achievement.
+Adds a shortcode to show or hide content depending on if the user has earned a specific achievement.
 
 **Note:** You will need to install the free [BadgeOS plugin](http://wordpress.org/extend/plugins/badgeos/ "BadgeOS")&trade; (version 1.2 or higher) to use the BadgeOS Community Add-on.
 
