@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: BadgeOS Achievement Shortcode
+ * Plugin Name: BadgeOS Achievement Shortcode Add-On
  * Plugin URI: http://www.konnektiv.de/
- * Description: Adds a shortcode to show or hide content depeneding on if the user has earned a specific achievement
- * Tags: buddypress
+ * Description: This BadgeOS Add-on adds a shortcode to show or hide content depending on if the user has earned a specific achievement
+ * Tags: badgeos
  * Author: konnektiv
- * Version: 0.0.1
+ * Version: 1.0.0
  * Author URI: https://konnektiv.de/
  * License: GNU AGPL
- * Text Domain: badgeos-activity-progress
+ * Text Domain: badgeos-achievement-shortcode
  */
 
 /*
@@ -34,7 +34,7 @@ class BadgeOS_Achievement_Shortcode {
 		// Define plugin constants
 		$this->basename       = plugin_basename( __FILE__ );
 		$this->directory_path = plugin_dir_path( __FILE__ );
-		$this->directory_url  = plugins_url( 'badgeos-activity-progress/' );
+		$this->directory_url  = plugins_url( 'badgeos-achievement-shortcode/' );
 
 		// Load translations
 		load_plugin_textdomain( 'badgeos-achievement-shortcode', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
@@ -72,7 +72,7 @@ class BadgeOS_Achievement_Shortcode {
 	/**
 	 * Check if BadgeOS is available
 	 *
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 * @return bool True if BadgeOS is available, false otherwise
 	 */
 	public static function meets_requirements() {
