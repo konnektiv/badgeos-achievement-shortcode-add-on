@@ -34,6 +34,9 @@ This plugin was originally developed for the [globe - Community of Digital Learn
 
 == Changelog ==
 
+= 1.0.2 =
+* Fix translation domain & add gettext calls
+
 = 1.0.1 =
 * Fix shortcode description & error message
 
