@@ -53,7 +53,7 @@ class BadgeOS_Achievement_Shortcode {
 			'attributes'      => array(
 				'id' => array(
 					'name'        => __( 'Achievement ID', 'badgeos' ),
-					'description' => __( 'The ID of the achievement to the user must have earned.', 'badgeos' ),
+					'description' => __( 'The ID of the achievement the user must have earned.', 'badgeos' ),
 					'type'        => 'text',
 				),
 			),
@@ -75,7 +75,7 @@ class BadgeOS_Achievement_Shortcode {
 		$return = '';
 
 		if ( ! $achievement ) {
-			$return = '<div class="error">' . __( 'You have to specify a valid achievement id in the "achievement" parameter!', 'badgeos-achievement-shortcode' ) . '</div>';
+			$return = '<div class="error">' . __( 'You have to specify a valid achievement id in the "id" parameter!', 'badgeos-achievement-shortcode' ) . '</div>';
 		} elseif ( $user_has_achievement ) {
 			$return = do_shortcode( $content );
 		}
