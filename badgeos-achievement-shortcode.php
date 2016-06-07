@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: BadgeOS Achievement Shortcode Add-On
- * Plugin URI: https://wordpress.org/plugins/achievement-shortcode-add-on-for-badgeos/
+ * Plugin URI: https://wordpress.org/plugins/achievement-shortcode-for-badgeos/
  * Description: This BadgeOS Add-on adds a shortcode to show or hide content depending on if the user has earned a specific achievement
  * Tags: badgeos, restrict, shortcode
  * Author: konnektiv
  * Version: 1.0.2
  * Author URI: https://konnektiv.de/
  * License: GNU AGPL
- * Text Domain: achievement-shortcode-add-on-for-badgeos
+ * Text Domain: achievement-shortcode-for-badgeos
  */
 /*
  * Copyright © 2012-2016 LearningTimes, LLC; Konnektiv
@@ -36,7 +36,7 @@ class BadgeOS_Achievement_Shortcode {
 		$this->directory_url  = plugin_dir_url(  __FILE__ );
 
 		// Load translations
-		load_plugin_textdomain( 'achievement-shortcode-add-on-for-badgeos', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'achievement-shortcode-for-badgeos', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 		// If BadgeOS is unavailable, deactivate our plugin
 		add_action( 'admin_notices', array( $this, 'maybe_disable_plugin' ) );
@@ -46,14 +46,14 @@ class BadgeOS_Achievement_Shortcode {
 
 	public function register_badgeos_shortcodes() {
 		badgeos_register_shortcode( array(
-			'name'            => __( 'User earned achievement', 'achievement-shortcode-add-on-for-badgeos' ),
+			'name'            => __( 'User earned achievement', 'achievement-shortcode-for-badgeos' ),
 			'slug'            => 'user_earned_achievement',
-			'description'     => __( 'Show or hide content depending on if the user has earned a specific achievement.', 'achievement-shortcode-add-on-for-badgeos' ),
+			'description'     => __( 'Show or hide content depending on if the user has earned a specific achievement.', 'achievement-shortcode-for-badgeos' ),
 			'output_callback' => array( $this, 'shortcode' ),
 			'attributes'      => array(
 				'id' => array(
-					'name'        => __( 'Achievement ID', 'achievement-shortcode-add-on-for-badgeos' ),
-					'description' => __( 'The ID of the achievement the user must have earned.', 'achievement-shortcode-add-on-for-badgeos' ),
+					'name'        => __( 'Achievement ID', 'achievement-shortcode-for-badgeos' ),
+					'description' => __( 'The ID of the achievement the user must have earned.', 'achievement-shortcode-for-badgeos' ),
 					'type'        => 'text',
 				),
 			),
@@ -75,7 +75,7 @@ class BadgeOS_Achievement_Shortcode {
 		$return = '';
 
 		if ( ! $achievement ) {
-			$return = '<div class="error">' . __( 'You have to specify a valid achievement id in the "id" parameter!', 'achievement-shortcode-add-on-for-badgeos' ) . '</div>';
+			$return = '<div class="error">' . __( 'You have to specify a valid achievement id in the "id" parameter!', 'achievement-shortcode-for-badgeos' ) . '</div>';
 		} elseif ( $user_has_achievement ) {
 			$return = do_shortcode( $content );
 		}
@@ -108,7 +108,7 @@ class BadgeOS_Achievement_Shortcode {
 		if ( ! $this->meets_requirements() ) {
 			// Display our error
 			echo '<div id="message" class="error">';
-			echo '<p>' . sprintf( __( 'BadgeOS Achievement Shortcode Add-On requires BadgeOS 1.4.0 or greater and has been <a href="%s">deactivated</a>. Please install and activate BadgeOS and then reactivate this plugin.', 'achievement-shortcode-add-on-for-badgeos' ), admin_url( 'plugins.php' ) ) . '</p>';
+			echo '<p>' . sprintf( __( 'BadgeOS Achievement Shortcode Add-On requires BadgeOS 1.4.0 or greater and has been <a href="%s">deactivated</a>. Please install and activate BadgeOS and then reactivate this plugin.', 'achievement-shortcode-for-badgeos' ), admin_url( 'plugins.php' ) ) . '</p>';
 			echo '</div>';
 
 			// Deactivate our plugin
