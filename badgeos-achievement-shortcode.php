@@ -5,7 +5,7 @@
  * Description: This BadgeOS Add-on adds a shortcode to show or hide content depending on if the user has earned a specific achievement
  * Tags: badgeos, restrict, shortcode
  * Author: konnektiv
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author URI: https://konnektiv.de/
  * License: GNU AGPL
  * Text Domain: achievement-shortcode-for-badgeos
