@@ -12,7 +12,7 @@ This BadgeOS Add on adds a shortcode to show or hide content depending on if the
 
 == Description ==
 
-This BadgeOS Add on adds a shortcode to show or hide content depending on if the user has earned a specific achievement.
+This BadgeOS Add on adds a shortcode to show or hide content depending on if the user has earned a specific achievement. Any content in a post or page enclosed in the shortcode [user_earned_achievement id="achievement_id"][/user_earned_achievement] will only be shown if the current user has already earned the achievement with the specified id. This shortcode is fully integrated with the BadgeOS shortcode insert button.
 
 **Note:** You will need to install the free [BadgeOS plugin](http://wordpress.org/extend/plugins/badgeos/ "BadgeOS")&trade; (version 1.4 or higher) to use the BadgeOS Community Add-on.
 
