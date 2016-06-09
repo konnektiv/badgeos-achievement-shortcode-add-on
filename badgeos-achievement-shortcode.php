@@ -42,6 +42,7 @@ class BadgeOS_Achievement_Shortcode {
 		add_action( 'admin_notices', array( $this, 'maybe_disable_plugin' ) );
 
 		add_action( 'init', array( $this, 'register_badgeos_shortcodes' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ), 99 );
 	}
 
 	public function register_badgeos_shortcodes() {
@@ -58,6 +59,16 @@ class BadgeOS_Achievement_Shortcode {
 				),
 			),
 		) );
+	}
+
+	/**
+	 * Enqueue and localize relevant admin_scripts.
+	 *
+	 * @since  1.0.4
+	 */
+	public function admin_scripts() {
+		wp_enqueue_script( 'rangyinputs-jquery', $this->directory_url . 'js/rangyinputs-jquery-src.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'activity-progress-shortcode-embed', $this->directory_url . 'js/achievement-shortcode-embed.js', array( 'rangyinputs-jquery', 'badgeos-select2' ), '', true );
 	}
 
 	public function shortcode( $atts, $content = null ) {
