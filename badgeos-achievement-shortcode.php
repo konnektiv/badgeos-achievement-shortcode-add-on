@@ -129,6 +129,10 @@ class BadgeOS_Achievement_Shortcode {
 
 			// Deactivate our plugin
 			deactivate_plugins( $this->basename );
+			
+			// Stop Wordpress from displaying "Plugin Activated" message when plugin gets deactivated.
+			if ( isset( $_GET['activate'] ) ) 
+            unset( $_GET['activate'] );
 		}
 	}
 
