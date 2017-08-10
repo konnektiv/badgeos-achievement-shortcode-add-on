@@ -42,14 +42,14 @@ class BadgeOS_Achievement_Shortcode {
 		add_action( 'admin_notices', array( $this, 'maybe_disable_plugin' ) );
 
 		// Only add this function if BadgeOS is active, terminate plugin otherwise
-		if($this->meets_requirements())
-			add_action( 'init', array( $this, 'register_badgeos_shortcodes' ) );
+		
+		add_action( 'init', array( $this, 'register_badgeos_shortcodes' ) );
 		
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ), 99 );
 	}
 
 	public function register_badgeos_shortcodes() {
-	
+		if(if($this->meets_requirements()){
 		// This is dependent BadgeOS being active, or else it is undefined
 		badgeos_register_shortcode( array(
 			'name'            => __( 'User earned achievement', 'achievement-shortcode-for-badgeos' ),
@@ -64,6 +64,7 @@ class BadgeOS_Achievement_Shortcode {
 				),
 			),
 		) );
+		}
 	}
 
 	/**
