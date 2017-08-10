@@ -49,7 +49,7 @@ class BadgeOS_Achievement_Shortcode {
 	}
 
 	public function register_badgeos_shortcodes() {
-		if(if($this->meets_requirements()){
+		if($this->meets_requirements()){
 		// This is dependent BadgeOS being active, or else it is undefined
 		badgeos_register_shortcode( array(
 			'name'            => __( 'User earned achievement', 'achievement-shortcode-for-badgeos' ),
