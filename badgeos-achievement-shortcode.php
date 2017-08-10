@@ -41,11 +41,16 @@ class BadgeOS_Achievement_Shortcode {
 		// If BadgeOS is unavailable, deactivate our plugin
 		add_action( 'admin_notices', array( $this, 'maybe_disable_plugin' ) );
 
+		// Only add this function if BadgeOS is active, terminate plugin otherwise
+		
 		add_action( 'init', array( $this, 'register_badgeos_shortcodes' ) );
+		
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ), 99 );
 	}
 
 	public function register_badgeos_shortcodes() {
+		if($this->meets_requirements()){
+		// This is dependent BadgeOS being active, or else it is undefined
 		badgeos_register_shortcode( array(
 			'name'            => __( 'User earned achievement', 'achievement-shortcode-for-badgeos' ),
 			'slug'            => 'user_earned_achievement',
@@ -59,6 +64,7 @@ class BadgeOS_Achievement_Shortcode {
 				),
 			),
 		) );
+		}
 	}
 
 	/**
@@ -124,6 +130,10 @@ class BadgeOS_Achievement_Shortcode {
 
 			// Deactivate our plugin
 			deactivate_plugins( $this->basename );
+			
+			// Stop Wordpress from displaying "Plugin Activated" message when plugin gets deactivated.
+			if ( isset( $_GET['activate'] ) ) 
+            unset( $_GET['activate'] );
 		}
 	}
 
